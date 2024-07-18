@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="theme-switch">&#9728;</button>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="zh">中文</option>
+                <option value="ko">한국어</option>
+                <option value="id">Bahasa Indonesia</option>
+            </select>
+        </div>
+        <div class="right-header">
+            <span id="current-datetime"></span>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="login-box">
+                <h2 data-translate="login">Login</h2>
+                <form action="{{ url_for('login') }}" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" data-translate="login_button">Login</button>
+                </form>
+                <button onclick="location.href='{{ url_for('register') }}'" data-translate="register_button">Register</button>
+            </div>
+            <div class="welcome-box">
+                <p data-translate="welcome_text">Welcome to the Personal Finance Tracker!</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/jawad-mohammed01">LinkedIn</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

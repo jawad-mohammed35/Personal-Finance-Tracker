@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about_styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="theme-switch">&#9728;</button>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="zh">中文</option>
+                <option value="ko">한국어</option>
+                <option value="id">Bahasa Indonesia</option>
+            </select>
+        </div>
+        <div class="right-header">
+            <span id="current-datetime"></span>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 data-translate="about_title">About Personal Finance Tracker</h1>
+            <p data-translate="about_description">This application helps you manage your personal finances by tracking your income and expenses, creating budgets, and visualizing your financial data.</p>
+            <h2 data-translate="about_creator">About the Creator</h2>
+            <p data-translate="creator_name">Name: Jawad Mohammed</p>
+            <p data-translate="creator_school">School: Florida International University</p>
+            <p data-translate="creator_major">Major: Computer Science</p>
+            <div class="buttons">
+                <a href="{{ url_for('index') }}" class="button" data-translate="login_page">Go to Login Page</a>
+                <a href="{{ url_for('register') }}" class="button" data-translate="register_page">Go to Register Page</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/jawad-mohammed01">LinkedIn</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+    </footer>
+    <script src="{{ url_for('static', filename='about_script.js') }}"></script>
+</body>
+</html>

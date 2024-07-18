@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <button id="theme-switch">&#9728;</button>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="zh">中文</option>
+                <option value="ko">한국어</option>
+                <option value="id">Bahasa Indonesia</option>
+            </select>
+        </div>
+        <div class="right-header">
+            <span id="current-datetime"> <span id="datetime-text"></span></span>
+            <button id="logout" onclick="window.location.href='{{ url_for('logout') }}'">Logout</button>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 data-translate="dashboard">Dashboard</h2>
+            <div class="tracker-box">
+                <h3 data-translate="income_tracker">Income Tracker</h3>
+                <form id="income-form">
+                    <input type="number" id="income-amount" placeholder="Amount" required>
+                    <input type="text" id="income-source" placeholder="Source" required>
+                    <button type="submit" data-translate="add_income">Add Income</button>
+                </form>
+                <canvas id="income-chart"></canvas>
+            </div>
+            <div class="tracker-box">
+                <h3 data-translate="budget_tracker">Budget Tracker</h3>
+                <form id="budget-form">
+                    <input type="number" id="budget-amount" placeholder="Amount" required>
+                    <input type="text" id="budget-category" placeholder="Category" required>
+                    <button type="submit" data-translate="add_budget">Add Budget</button>
+                </form>
+                <canvas id="budget-chart"></canvas>
+            </div>
+            <button id="export-excel" data-translate="export_excel">Export to Excel</button>
+            <button id="clear-data" data-translate="clear_data">Clear Data</button>
+        </div>
+    </main>
+    <footer>
+        <a href="https://www.linkedin.com/in/jawad-mohammed01">LinkedIn</a>
+        <a href="{{ url_for('about') }}">About Us</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

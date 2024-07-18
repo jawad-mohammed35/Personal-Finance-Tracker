@@ -1,8 +1,8 @@
 # Personal-Finance-Tracker
 
-Name: Jawad Mohammed
-School: Florida International University
-Major: Computer Science
+Name: Jawad Mohammed\n
+School: Florida International University\n
+Major: Computer Science\n
 
 I developed a Personal Finance Tracker as my first self-project. I developed this during the summer of 2024 during my freetime. 
 Prior to this project, I didn't know much of Python and SQL, so this project defiently helped me in learning those skills.
